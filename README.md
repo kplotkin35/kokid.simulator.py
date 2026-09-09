@@ -1,15 +1,13 @@
-# kokid.simulator.py
-
 """
 KOKID - Worm + Virus Behavioral Simulator
 Educational cybersecurity project
 
 SAFE:
-- No network connections
-- No real file modification
-- No persistence
-- No destructive actions
-- All activity is simulated in memory
+-  network connections
+- real file modification
+- persistence
+- destructive actions
+- All activity is simulated in memory, nerwork, files
 """
 
 import tkinter as tk
@@ -23,7 +21,7 @@ class KokidSimulator:
         self.root.title("KOKID | Cybersecurity Defense Simulator")
         self.root.geometry("1000x700")
 
-        self.running = False
+        self.running = True
         self.infected = set()
         self.quarantined = set()
         self.alerts = []
@@ -53,7 +51,7 @@ class KokidSimulator:
 
         subtitle = ttk.Label(
             self.root,
-            text="Educational simulation • No real files or networks affected"
+            text="Educational  real simulation • real files or networks  infected"
         )
         subtitle.pack()
 
@@ -276,7 +274,7 @@ class KokidSimulator:
 
         self.log.config(state="normal")
         self.log.delete("1.0", tk.END)
-        self.log.config(state="disabled")
+        self.log.config(state="enabled")
 
         self.write_log("[SYSTEM] Simulator reset.")
         self.draw_network()
